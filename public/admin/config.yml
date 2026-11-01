@@ -1,0 +1,20 @@
+backend:
+  name: github
+  repo: seu-usuario-do-github/nome-do-seu-repositorio # Altere aqui com os dados exatos do seu GitHub!
+  branch: main
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "blog"
+    label: "Artigos do Blog"
+    folder: "src/pages/blog"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Layout Base", name: "layout", type: "hidden", default: "../../layouts/Layout.astro" }
+      - { label: "Título do Artigo", name: "title", type: "string" }
+      - { label: "Descrição Curta", name: "description", type: "string" }
+      - { label: "Data de Publicação", name: "pubDate", type: "date" }
+      - { label: "Corpo do Texto", name: "body", type: "markdown" }
